@@ -1,4 +1,5 @@
 # Markov Decision Process to automate my handwritten homework :)
+# https://inst.eecs.berkeley.edu/~cs188/sp10/written/w4.pdf
 
 states = ['PoorHungry', 'PoorFull', 'RichHungry', 'RichFull']
 actions = ['Play', 'Eat']
