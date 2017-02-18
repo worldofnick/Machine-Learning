@@ -1,13 +1,11 @@
 #Machine Learning
 
-Repo of my code while learning about Machine Learning
-
 ##Topics:
 ####Clustering
 K-Means, K-Means++, Hierarchical, Lloyds Algorithm, Gonzalez
 
 ####Document Similarity
-Min Hashing, Locality Sensitive Hashing, K-grams
+Min Hashing, Locality Sensitive Hashing, K-grams, Jaccard Similarity
 
 ####Gradient Descent 
 Batch and Stochastic Gradient Descent
