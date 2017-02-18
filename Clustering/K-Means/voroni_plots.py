@@ -16,7 +16,7 @@ data = pandas.read_csv('Q.csv')
 reduced_data = PCA(n_components=2).fit_transform(data)
 kmeans = KMeans(init='k-means++', n_clusters=5, n_init=10)
 kmeans.fit(reduced_data)
-print kmeans
+
 # Step size of the mesh. Decrease to increase the quality of the VQ.
 h = .02     # point in the mesh [x_min, x_max]x[y_min, y_max].
 
