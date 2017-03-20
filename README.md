@@ -1,21 +1,21 @@
-#Machine Learning
+# Machine Learning
 
-##Topics:
-####Clustering
+## Topics:
+#### Clustering
 K-Means, K-Means++, Hierarchical, Lloyds Algorithm, Gonzalez
 
-####Document Similarity
+#### Document Similarity
 Min Hashing, Locality Sensitive Hashing, K-grams, Jaccard Similarity
 
-####Gradient Descent 
+#### Gradient Descent 
 Batch and Stochastic Gradient Descent
 
-####PCA
+#### PCA
 Singular Value Decomposition: Singular values/vectors, Eigen values/vectors, etc
 
-####Linear Regression
+#### Linear Regression
 Linear Regression, Polynomial Regression, Overfitting, Cross Validation
 
-####Streaming/Frequency
+#### Streaming/Frequency
 Misra-Greis, Count-Min Sketch
 
