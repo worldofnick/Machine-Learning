@@ -22,26 +22,24 @@ def three_means_cost(X, centers):
 
 	for x in X:
 		cluster_center, distance = phi(x, centers)
-		sum += distance
+		sum += distance**2
 
-	sum = sum**2
 	average = sum / len(X)
 	return average**0.5
 
 # Returns the closest cluster center to x along with the distance
 def phi(x, clusters):
 	argmin, distances = pairwise_distances_argmin_min([x], clusters, metric='euclidean')
-	return argmin[0], distances[0]
+	return argmin[0], distances[0], argmin
 
-def gonzalez_init(data_frame, k):
-	X = [tuple(x) for x in data_frame.values]
+def gonzalez_init(X, k):
 	clusters = [X[0]]
 	
 	for i in range(1, k):
 		max_dist = -sys.maxsize
 		next_center = None
 		for x in X:
-			cluster_center, distance = phi(x, clusters)
+			cluster_center, distance, index = phi(x, clusters)
 			if distance > max_dist:
 				max_dist = distance
 				next_center = x
@@ -59,19 +57,19 @@ def plot_clusters(points, centers, title):
 	plt.title(title)
 	plt.show()
 
-c2_data = pd.read_csv('/Users/nickporter/Library/Mobile Documents/com~apple~CloudDocs/Spring 2017/CS 5140/CS-5140/hw3/C2.txt', sep="\t", header = None)
-c2_data = c2_data.drop(0, axis=1)
-X = [tuple(x) for x in c2_data.values]
-centers = gonzalez_init(c2_data, 3)
+def main():
+	c2_data = pd.read_csv('/Users/nickporter/Library/Mobile Documents/com~apple~CloudDocs/Spring 2017/CS 5140/CS-5140/hw3/C2.txt', sep="\t", header = None)
+	c2_data = c2_data.drop(0, axis=1)
+	X = [tuple(x) for x in c2_data.values]
+	centers = gonzalez_init(X, 3)
 
-print 'Centers after running Gonzalez %s' % centers
+	print 'Centers after running Gonzalez %s' % centers
+	three_center_dist, point, center = three_center_cost(X, centers)
+	print 'Three Center Cost: %s d(%s, %s)' % (three_center_dist, point, center)
 
-three_center_dist, point, center = three_center_cost(X, centers)
+	three_means_dist = three_means_cost(X, centers)
+	print 'Three Means Cost: %s ' % (three_means_dist)
+	plot_clusters(X, centers, 'Gonzalez for k-centers')
 
-print 'Three Center Cost: %s d(%s, %s)' % (three_center_dist, point, center)
 
-three_means_dist = three_means_cost(X, centers)
-
-print 'Three Means Cost: %s ' % (three_means_dist)
-
-plot_clusters(X, centers, 'Gonzalez for k-centers')
+#main()

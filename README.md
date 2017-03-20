@@ -15,3 +15,7 @@ Singular Value Decomposition: Singular values/vectors, Eigen values/vectors, etc
 
 ####Linear Regression
 Linear Regression, Polynomial Regression, Overfitting, Cross Validation
+
+####Streaming/Frequency
+Misra-Greis, Count-Min Sketch
+

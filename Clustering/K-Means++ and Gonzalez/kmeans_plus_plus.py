@@ -12,7 +12,7 @@ def pick_with_probablity(X, clusters):
 	sum = 0
 
 	for x in X:
-		cluster, squared_distance = gz.phi(x, clusters)
+		cluster, squared_distance, index = gz.phi(x, clusters)
 		squared_distance = squared_distance**2
 		distances.append(squared_distance)
 		sum += squared_distance
@@ -41,18 +41,30 @@ def main():
 	X = [tuple(x) for x in c2_data.values]
 	
 	match_gz = 0
-	gz_centers = gz.gonzalez_init(c2_data, 3)
-	iterations = 50.0
+	gz_centers = gz.gonzalez_init(X, 3)
+	iterations = 50
 	
+	costs = []
+
 	for i in range(0, iterations):
 		centers = kmeans_plus_plus(X, 3)
-		if centers == gz_centers:
-			match_gz += 1
-
-	print 'Number of times k-means matched gonzalez %.2f' % match_gz / iterations
+		costs.append(gz.three_means_cost(X, centers))
 	
+	# Plot
+	x_values = np.sort(costs)
+	y_values = []
+	y_value = 0
+	for i in range(0, len(costs)):
+		y_value += 1/ float(len(x_values))
+		y_values.append(y_value)
+	
+	plt.plot(x_values, y_values)
+	plt.xlabel("3-means cost")
+	plt.ylabel("Percent of data <= to the corresponding 3-means cost")
+	plt.title("CDF plot of k-Means++ 3-means cost ")
+	plt.show()	
 
-	#gz.plot_clusters(X, centers, 'k-Means++ for k-centers')
+	
 	print centers	
 
-main()
+#main()
