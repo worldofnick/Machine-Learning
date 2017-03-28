@@ -13,7 +13,7 @@ Batch and Stochastic Gradient Descent
 #### PCA
 Singular Value Decomposition: Singular values/vectors, Eigen values/vectors, etc
 
-#### Linear Regression
+#### Regression
 Linear Regression, Polynomial Regression, Overfitting, Cross Validation
 
 #### Streaming/Frequency
