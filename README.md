@@ -19,3 +19,5 @@ Linear Regression, Polynomial Regression, Overfitting, Cross Validation
 #### Streaming/Frequency
 Misra-Greis, Count-Min Sketch
 
+#### Classification
+Percepton
