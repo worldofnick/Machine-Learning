@@ -1,4 +1,4 @@
-# Implementation of a Decision tree and the ID3 tree building algorithm
+# Implementation of a decision tree and the ID3 tree building algorithm
 
 import math
 import os
