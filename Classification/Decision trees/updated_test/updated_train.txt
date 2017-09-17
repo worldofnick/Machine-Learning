@@ -22,6 +22,7 @@
 - Admiral Grace Hopper
 - Franco Preparata
 - John Backus
++ Les Hatton
 + Gordon Moore
 + Sebastian Thrun
 + Nigel Shadbolt
