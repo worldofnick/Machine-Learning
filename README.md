@@ -20,4 +20,4 @@ Linear Regression, Polynomial Regression, Overfitting, Cross Validation
 Misra-Greis, Count-Min Sketch
 
 #### Classification
-Percepton
+Percepton, Decision trees
